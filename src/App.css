@@ -7,8 +7,9 @@
   margin-top: 1em;
   cursor: pointer; /* Pointer/hand icon */
   display: block;
-  width: 40%;
-  font-size: 1em;
+  width: 50%;
+  max-width: 400px;
+  font-size: 1.3em;
   border-radius: 1em;
 }
 
@@ -39,9 +40,15 @@
 }
 
 .logo-image{
+  min-width: 300px;
   width: 35%;
   background-color: #9D2235;
   margin: 0.3em;
   margin-left: 2em;
   padding: 0.5em;
+}
+.text-header{
+  display: block;
+  text-align: center;
+  font-size: 4em;
 }
