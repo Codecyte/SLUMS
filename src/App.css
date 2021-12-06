@@ -1,8 +1,7 @@
-
 .btn-group button {
-  background-color: #9D2235; /* UAMS Red background */
+  background-color: #9d2235; /* UAMS Red background */
   color: white; /* White text */
-  padding: 1em ; /* Some padding */
+  padding: 1em; /* Some padding */
   margin: auto;
   margin-top: 1em;
   cursor: pointer; /* Pointer/hand icon */
@@ -13,10 +12,9 @@
   border-radius: 1em;
 }
 
-
 /* Add a background color on hover */
 .btn-group button:hover {
-  background-color:#c42b42;
+  background-color: #c42b42;
 }
 
 .App {
@@ -31,7 +29,7 @@
 }
 
 .header {
-  background-color: #9D2235;
+  background-color: #9d2235;
   display: block;
   position: fixed;
   width: 100vw;
@@ -39,15 +37,16 @@
   z-index: 99999;
 }
 
-.logo-image{
+.logo-image {
   min-width: 300px;
+  max-width: 400px;
   width: 35%;
-  background-color: #9D2235;
+  background-color: #9d2235;
   margin: 0.3em;
   margin-left: 2em;
   padding: 0.5em;
 }
-.text-header{
+.text-header {
   display: block;
   text-align: center;
   font-size: 4em;
