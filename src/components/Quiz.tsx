@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../logo.png'
+import { Question } from './Question';
 
-function Quiz(){
+function Quiz( questions: Question[] ){
     return(
         <div className="quizDiv">
             

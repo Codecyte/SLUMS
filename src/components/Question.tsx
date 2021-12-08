@@ -1,12 +1,10 @@
 import React from 'react';
 
-function Question(){
-    return(
-        <div className="quizDiv">
-            
-        </div>
-    )
+export type Question = {
+    prompt: string
+    answerOptions?: string[]
+    proctorInstruction?: string
+    imagePath?: string
+    audioPath?: string
+    answer?: string
 }
-
-
-export default Question;
