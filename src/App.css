@@ -11,6 +11,17 @@
   font-size: 1.3em;
   border-radius: 1em;
 }
+.btn-group-container {
+  width: 100vw;
+  height: 100vh;
+}
+.btn-group {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 50%;
+}
 
 /* Add a background color on hover */
 .btn-group button:hover {
@@ -20,12 +31,13 @@
 .App {
   justify-content: center;
   height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
   background-color: white;
   z-index: 1;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .header {
@@ -50,4 +62,18 @@
   display: block;
   text-align: center;
   font-size: 4em;
+}
+
+/* Slum Question Stuff */
+.slumQDiv {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-color: antiquewhite;
+  justify-content: center;
+  text-align: center;
+}
+
+.slumQPrompt {
+  font-size: 6vw;
 }

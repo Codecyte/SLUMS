@@ -13,8 +13,11 @@ export interface Question {
     pointsEarned?: number
 }
 
-export function renderSLUMQuestion(q: Question) {
+export function renderSLUMQuestion(q: Question, index: number) {
     return (
-        <div></div>
+        <div key={'Q' + index} id={'Q' + index} className='slumQDiv'>
+           
+            <div className='slumQPrompt'> {'Q' + (index + 1) + ' '} {q.prompt}</div>
+        </div>
     )
 }
