@@ -1,11 +1,18 @@
-import { Question } from '../components/Question'
+import { Question, AnswerChoice } from "../components/Question";
 
 export const PatientDescriptionQuestions: Question[] = [
-    { prompt: "How old are you?", pointWorth: 0 },
-    { prompt: "What is your highest level of education?", answerOptions: ["Less than high school", "Highschool and Above"], pointWorth: 0 },
-
-]
+  { prompt: "How old are you?" },
+  {
+    prompt: "What is your highest level of education?",
+    answerOptions: [
+      {
+        answerText: "Less than high school",
+        pointWorth: 0,
+      },
+    ],
+  },
+];
 
 export function getPatientDescriptionQuestions(): Question[] {
-    return PatientDescriptionQuestions
+  return PatientDescriptionQuestions;
 }
