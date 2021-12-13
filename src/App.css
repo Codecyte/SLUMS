@@ -1,3 +1,5 @@
+
+/* Buttons and the main page */
 .btn-group button {
   background-color: #9d2235; /* UAMS Red background */
   color: white; /* White text */
@@ -12,15 +14,20 @@
   border-radius: 1em;
 }
 .btn-group-container {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  text-align: center;
+  scroll-snap-align: start;
+  position: relative;
+  float:left
 }
 .btn-group {
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: block;
   position: relative;
-  top: 50%;
+  margin: 0;
+  margin-top: 45vh;
 }
 
 /* Add a background color on hover */
@@ -29,24 +36,33 @@
 }
 
 .App {
-  justify-content: center;
+  /* justify-content: center; */
   height: 100vh;
-  display: block;
-  flex-direction: column;
+  display: inline-block;
   background-color: white;
   z-index: 1;
   margin: 0;
   padding: 0;
   position: relative;
+  overflow-x: scroll;
+  /* overflow-y: hidden; */
+  vertical-align: text-top;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
 }
 
+/* Header */
 .header {
   background-color: #9d2235;
-  display: block;
+  display: inline-block;
   position: fixed;
   width: 100vw;
-  height: 0.5em;
+  height: 5%;
   z-index: 99999;
+}
+.headerContainer {
+  scroll-snap-type: proximity;
+  display: flex;
 }
 
 .logo-image {
@@ -58,22 +74,29 @@
   margin-left: 2em;
   padding: 0.5em;
 }
-.text-header {
-  display: block;
-  text-align: center;
-  font-size: 4em;
-}
 
 /* Slum Question Stuff */
 .slumQDiv {
-  width: 100vw;
-  height: 100vh;
-  display: block;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: inline-block;
   background-color: antiquewhite;
-  justify-content: center;
+  /* justify-content: center; */
   text-align: center;
+  vertical-align: text-top;
+  border: 1px solid red;
+  position: relative;
+  scroll-snap-align: start;
+
+
 }
 
 .slumQPrompt {
-  font-size: 6vw;
+  font-size: 2vw;
+  white-space: normal;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 20vh;
 }

@@ -7,13 +7,11 @@ type QuizProps = {
 }
 
 type QuizState = {
-    currentQuestion: number;
-    answers: string[];
+    questionList: Question[]
 }
 export class Quiz extends React.Component<QuizProps, QuizState> {
     state: QuizState = {
-        answers: [],
-        currentQuestion: 0
+        questionList: this.props.questions
     };
 
     render(){
@@ -23,7 +21,6 @@ export class Quiz extends React.Component<QuizProps, QuizState> {
             </div>
         )
     }
-    
 }
 
 
