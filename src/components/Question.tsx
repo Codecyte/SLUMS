@@ -1,5 +1,6 @@
 /* Defines what a question is and will contain the methods to render the questions in HTML */
 import React from 'react';
+import CanvasDraw from 'react-canvas-draw';
 
 export interface Question {
     prompt: string
@@ -20,17 +21,28 @@ export interface AnswerChoice{
     audioPath?: string
     pointWorth: number
     pointsEarned?: number
+    canvasBackgroundPath?: string
 }
 
-function renderAnswer(a: AnswerChoice, index: number){
-    let key = "SLUMQ_" + (index + 1);
+type answerRenderState = {
+    answer: AnswerChoice
+    
+} 
+
+
+function renderAnswer(a: AnswerChoice, index: number, qIndex: number){
+    let key = "SLUMQ_" + (qIndex + 1) + "Answer_" + index;
+
     if (!a){
         return <div> ERROR, null answer choice given</div>
     }
     switch (a.type) {
         case AnswerType.DRAWING:
             return (
-                <div>TODO</div>
+
+                <div className='slumCanvasAnswer'>
+                    <CanvasDraw canvasWidth={500} canvasHeight={500} gridColor='white' imgSrc={a.canvasBackgroundPath} brushRadius={2}> </CanvasDraw>
+                    </div>
             )
         case AnswerType.NUMBER:
             return (
@@ -43,23 +55,24 @@ function renderAnswer(a: AnswerChoice, index: number){
     }
 }
 
-export function renderSLUMQuestion(q: Question, index: number) {
-    let id = 'slumQ_' + (index + 1)
+export function renderSLUMQuestion(q: Question, qIndex: number) {
+    let id = 'slumQ_' + (qIndex + 1)
     let pointTotal = 0
     let answerRenderJSX: JSX.Element[] = []
 
     if (q.answerChoices){
-        q.answerChoices.forEach((answer,index) => {
+        q.answerChoices.forEach((answer,aIndex) => {
             pointTotal += answer.pointWorth
-            answerRenderJSX.push(renderAnswer(answer,index))
+            answerRenderJSX.push(renderAnswer(answer,aIndex, qIndex))
         });
     } else {
         answerRenderJSX = [<></>]
     }
+    console.log(pointTotal + " total points");
     return (
-        <div key={'Q' + index} id={id} className='slumQDiv'>
+        <div key={'Q' + qIndex} id={id} className='slumQDiv'>
            
-            <div className='slumQPrompt'> {'Q' + (index + 1) + ' '} {q.prompt}</div>
+            <div className='slumQPrompt'> {'Q' + (qIndex + 1) + ' '} {q.prompt}</div>
 
             <div className='slumAChoices'> 
                 {q.answerChoices ? answerRenderJSX  : <></>}

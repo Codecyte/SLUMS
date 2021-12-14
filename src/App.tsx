@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Quiz from './components/Quiz';
 import { PatientDescriptionQuestions } from './data/PatientDescriptions';
-import { renderSLUMQuestion } from './components/Question'
 import { SLUMSQuestions } from './data/SLUMSQuestions';
 import Header from './components/Header';
 
@@ -17,7 +16,7 @@ function App() {
             <button>Give SLUMS</button>
           </div>
         </div>
-        <Quiz questions={PatientDescriptionQuestions.concat(SLUMSQuestions)} renderFunction={renderSLUMQuestion}/>
+        <Quiz questions={PatientDescriptionQuestions.concat(SLUMSQuestions)}/>
       </div>
     </div>
   );
