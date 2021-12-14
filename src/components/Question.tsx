@@ -66,8 +66,8 @@ export function renderSLUMQuestion(q: Question, index: number) {
             </div>
 
             <div className="slumNAV">
-                <button> PREVIOUS </button>
-                <button> NEXT </button>
+                <button> ← </button>
+                <button> → </button>
             </div>
         </div>
     )
