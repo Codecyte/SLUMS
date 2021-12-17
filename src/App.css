@@ -117,3 +117,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.slumAButton {
+  display: inline-block;
+}
+.activeButton {
+  background-color: violet;
+}

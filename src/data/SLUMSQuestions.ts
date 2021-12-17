@@ -44,11 +44,18 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "Please remember these five objects: \n Apple, Pen, Tie, House, Car",
+      "Please remember these five objects: </br>Apple, Pen, Tie, House, Car",
+    answerChoices: [
+      {
+        type: AnswerType.NOANSWER,
+        answerText: "",
+        pointWorth: 0,
+      },
+    ],
   },
   {
     prompt:
-      "You have $100 and you go to the store and buy a dozen apples for $3 and a tricycle for $20. \n \n How much did you spend?",
+      "You have $100 and you go to the store and buy a dozen apples for $3 and a tricycle for $20. </br> How much did you spend?",
     answerChoices: [
       {
         answerText: "$23",
@@ -62,7 +69,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "You have $100 and you go to the store and buy a dozen apples for $3 and a tricycle for $20. \n How much do you have left?",
+      "You have $100 and you go to the store and buy a dozen apples for $3 and a tricycle for $20. </br>How much do you have left?",
     answerChoices: [
       {
         answerText: "$77",
@@ -127,7 +134,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. \n 87",
+      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br>87",
     answerChoices: [
       {
         answerText: "Correct",
@@ -141,7 +148,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. \n 648",
+      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br>648",
     answerChoices: [
       {
         answerText: "Correct",
@@ -155,7 +162,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. \n 8537",
+      "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br> 8537",
     answerChoices: [
       {
         answerText: "Correct",
@@ -180,8 +187,15 @@ export const SLUMSQuestions: Question[] = [
     ],
   },
   {
-    prompt: "Based on the drawing, are the hour markers okay?",
+    prompt: "Based on the drawing, are the hour markers (numbers) okay?",
     answerChoices: [
+      {
+        type: AnswerType.RENDER,
+        canvasRenderIndex: -1,
+        answerText: "Correct",
+        pointWorth: 0,
+        canvasBackgroundPath: blankClock,
+      },
       {
         answerText: "Correct",
         pointWorth: 2,
@@ -195,6 +209,13 @@ export const SLUMSQuestions: Question[] = [
   {
     prompt: "Based on the drawing, is the time correct?",
     answerChoices: [
+      {
+        type: AnswerType.RENDER,
+        canvasRenderIndex: -2,
+        answerText: "Correct",
+        pointWorth: 0,
+        canvasBackgroundPath: blankClock,
+      },
       {
         answerText: "Correct",
         pointWorth: 2,
@@ -220,7 +241,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. \n \n Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after \n \n What was the female’s name?",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What was the female’s name? </b>",
     answerChoices: [
       {
         answerText: "Correct",
@@ -234,7 +255,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. \n \n Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after \n \n What work did she do?",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What work did she do? </b>",
     answerChoices: [
       {
         answerText: "Correct",
@@ -248,7 +269,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. \n \n Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after \n \n When did she go back to work?",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> When did she go back to work? </b>",
     answerChoices: [
       {
         answerText: "Correct",
@@ -262,7 +283,7 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. \n \n Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after \n \n What state did she live in?",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What state did she live in? </b>",
     answerChoices: [
       {
         answerText: "Correct",

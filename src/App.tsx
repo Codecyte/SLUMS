@@ -16,7 +16,7 @@ function App() {
             <button>Give SLUMS</button>
           </div>
         </div>
-        <Quiz questions={PatientDescriptionQuestions.concat(SLUMSQuestions)}/>
+        <Quiz questions={SLUMSQuestions}/>
       </div>
     </div>
   );
