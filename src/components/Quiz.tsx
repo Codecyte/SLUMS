@@ -48,9 +48,9 @@ export class Quiz extends React.Component<QuizProps, QuizState> {
                         sharedSavedCanvasData={this.state.imageData} 
                         updateDataFunction={this.updateSaveDataAtIndex} 
                         updateAnswer={this.updateAnswerPoints}
-                        prevRef={index != 0 ? this.questionRefs[index-1] : this.questionRefs[0]}
+                        prevRef={index !== 0 ? this.questionRefs[index-1] : this.questionRefs[0]}
                         ref={this.questionRefs[index]}
-                        nextRef={index != this.questionRefs.length - 1 ? this.questionRefs[index+1] : this.questionRefs[this.questionRefs.length - 1]}>
+                        nextRef={index !== this.questionRefs.length - 1 ? this.questionRefs[index+1] : this.questionRefs[this.questionRefs.length - 1]}>
 
                         </SlumQuestion>)}
                 {this.finalScore()}

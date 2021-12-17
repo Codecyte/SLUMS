@@ -84,13 +84,13 @@ export class SlumQuestion extends React.Component<SlumQProps, SlumQState> {
                             <br></br>
                         
                         {/* Really bad code follows to deal with async canvas and to consume output */}
-                        {console.log(setTimeout( () => loadDrawCallback( this.props.sharedSavedCanvasData[qIndex] != "") ,500))} 
+                        {console.log(setTimeout( () => loadDrawCallback( this.props.sharedSavedCanvasData[qIndex] !== "") ,500))} 
                         {console.log("Current qIndex: " + qIndex + this.props.sharedSavedCanvasData[qIndex])}
                     </div>
                 )
 
             case AnswerType.RENDER:
-                let shouldupdate = this.props.sharedSavedCanvasData[qIndex + a.canvasRenderIndex!] != ""
+                let shouldupdate = this.props.sharedSavedCanvasData[qIndex + a.canvasRenderIndex!] !== ""
                 console.log("Rendering: Canvas of Q" + qIndex +  this.props.sharedSavedCanvasData[qIndex + a.canvasRenderIndex!])
                 console.log(shouldupdate)
                 return (
