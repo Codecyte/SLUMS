@@ -1,16 +1,19 @@
 import { type } from "os";
 import { AnswerType, Question } from "../components/Question";
 import blankClock from "../assets/Circle.png";
+import shapes from "../assets/SquareTriangleRect.png";
 
 export const SLUMSQuestions: Question[] = [
   {
     prompt: "What day of the week is it?",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -20,10 +23,12 @@ export const SLUMSQuestions: Question[] = [
     prompt: "What is the year?",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -33,10 +38,12 @@ export const SLUMSQuestions: Question[] = [
     prompt: "What state are we in?",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -137,10 +144,12 @@ export const SLUMSQuestions: Question[] = [
       "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br>87",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 0,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -151,10 +160,12 @@ export const SLUMSQuestions: Question[] = [
       "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br>648",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -165,10 +176,12 @@ export const SLUMSQuestions: Question[] = [
       "I am going to give you a series of numbers and I would like you to give them to me backwards. For example, if I say 42, you would say 24. </br> </br> 8537",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -192,15 +205,17 @@ export const SLUMSQuestions: Question[] = [
       {
         type: AnswerType.RENDER,
         canvasRenderIndex: -1,
-        answerText: "Correct",
+        answerText: "",
         pointWorth: 0,
         canvasBackgroundPath: blankClock,
       },
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -217,10 +232,12 @@ export const SLUMSQuestions: Question[] = [
         canvasBackgroundPath: blankClock,
       },
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -230,10 +247,39 @@ export const SLUMSQuestions: Question[] = [
     prompt: "Please place an X in the triangle",
     answerChoices: [
       {
+        type: AnswerType.DRAWING,
+        canvasBackgroundPath: shapes,
+        pointWorth: 0,
+      },
+      {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 1,
       },
       {
+        type: AnswerType.INCORRECT,
+        answerText: "Incorrect",
+        pointWorth: 0,
+      },
+    ],
+  },
+  {
+    prompt: "Which of the figures is the largest?",
+    answerChoices: [
+      {
+        type: AnswerType.RENDER,
+        canvasRenderIndex: -1,
+        answerText: "Correct",
+        pointWorth: 0,
+        canvasBackgroundPath: shapes,
+      },
+      {
+        type: AnswerType.CORRECT,
+        answerText: "Correct",
+        pointWorth: 1,
+      },
+      {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -241,13 +287,15 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What was the female’s name? </b>",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What was the female’s name? </b>",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -255,13 +303,15 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What work did she do? </b>",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What work did she do? </b>",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -269,13 +319,15 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> When did she go back to work? </b>",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> When did she go back to work? </b>",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },
@@ -283,13 +335,15 @@ export const SLUMSQuestions: Question[] = [
   },
   {
     prompt:
-      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What state did she live in? </b>",
+      "I am going to tell you a story. Please listen carefully because afterwards, I’m going to ask you some questions about it. </br> </br> Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after </br> </br> <b> What state did she live in? </b>",
     answerChoices: [
       {
+        type: AnswerType.CORRECT,
         answerText: "Correct",
         pointWorth: 2,
       },
       {
+        type: AnswerType.INCORRECT,
         answerText: "Incorrect",
         pointWorth: 0,
       },

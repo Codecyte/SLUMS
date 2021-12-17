@@ -9,13 +9,13 @@ function App() {
   return (
     <div className="headerContainer"> 
       <Header />
-      <div className="App">
+      <div className="App" id='AppBody'>
         {/* <h1 className = "text-header"> SLUMS Exam</h1> */}
-        <div className='btn-group-container'>
+        {/* <div className='btn-group-container'>
           <div className="btn-group">
             <button>Give SLUMS</button>
           </div>
-        </div>
+        </div> */}
         <Quiz questions={SLUMSQuestions}/>
       </div>
     </div>

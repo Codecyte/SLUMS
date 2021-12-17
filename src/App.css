@@ -44,10 +44,12 @@
   padding: 0;
   position: relative;
   overflow-x: scroll;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   vertical-align: text-top;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
+  font-family: "Comic Sans MS", "Comic Sans", cursive, Arial, Helvetica,
+    sans-serif;
 }
 
 /* Header */
@@ -82,10 +84,8 @@
   max-height: 100vh;
   display: inline-block;
   background-color: antiquewhite;
-  /* justify-content: center; */
   text-align: center;
   vertical-align: text-top;
-  border: 1px solid red;
   position: relative;
   scroll-snap-align: start;
 }
@@ -93,34 +93,95 @@
 .slumQPrompt {
   font-size: 2vw;
   white-space: normal;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  margin-top: 20vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 5%;
+}
+
+button:active {
+  background-color: #9d2235;
 }
 
 .slumNAV button {
-  font-size: 4vw;
-  height: auto;
+  /* font-size: 4vw; */
+  /* height: auto; */
   background-color: #9d2235;
   color: white;
-  vertical-align: text-top;
-  text-align: center;
+  width: 100px;
+  height: 50px;
+  border: 2px solid black;
+
+  /* vertical-align: text-top; */
+  /* text-align: center; */
   outline: none;
+  margin: 20px;
   /* padding: 20px; */
   /* height: 20vh; */
+}
+
+.slumNAV button svg {
+  width: 50px;
+  height: 35px;
 }
 
 .slumCanvasAnswer {
   align-items: center;
   text-align: center;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+  min-width: 100vw;
 }
 
 .slumAButton {
   display: inline-block;
+  background-color: #9d2235;
+  border: 2px solid black;
+  color: white;
+  width: 160px;
+  padding: 14px 28px 14px 28px;
+  margin: 20px;
+  font-size: larger;
 }
+
 .activeButton {
-  background-color: violet;
+  border-width: 10px;
+  border-color: white !important;
+}
+
+.slumCorrectBtn {
+  width: 100px;
+  height: 50px;
+  background-color: #9d2235;
+  border: 2px solid black;
+  display: inline-block;
+  padding: 5px;
+  margin: 20px;
+}
+
+.slumCorrectBtn svg {
+  width: 40px;
+  height: 40px;
+}
+.slumCorrectBtn .activeButton {
+  background-color: whitesmoke !important;
+}
+
+.slumIncorrectBtn {
+  width: 100px;
+  height: 50px;
+  background-color: #9d2235;
+  border: 2px solid black;
+  margin: 20px;
+  padding: 5px;
+}
+.slumIncorrectBtn svg {
+  width: 40px;
+  height: 40px;
+}
+
+.canvasDraw {
+  margin-left: auto;
+  margin-right: auto;
+}
+.scoreText {
+  margin-top: 48vh;
 }

@@ -9,14 +9,20 @@ export interface Question {
     audioPath?: string
     imagePath?: string
     canvasBackgroundPath?: string
+
 }
 export enum AnswerType{
     TEXT,
     NUMBER,
     RENDER,
     DRAWING,
+    CORRECT,
+    INCORRECT,
     NOANSWER
 }
+
+
+
 export interface AnswerChoice{
     type?: AnswerType
     active?: boolean
@@ -28,9 +34,5 @@ export interface AnswerChoice{
     canvasRenderIndex?: number // How many questions ago should I render? 
 }
 
-type answerRenderState = {
-    answer: AnswerChoice
-    
-} 
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef, Ref } from 'react';
 import { Question } from './Question';
 import { SlumQuestion } from './SlumQuestion';
 
@@ -22,10 +22,19 @@ export class Quiz extends React.Component<QuizProps, QuizState> {
         totalPoints: 0
     };
 
+    private questionRefs:React.RefObject<any>[]
+    private startRef:React.RefObject<HTMLInputElement>
+    private endRef:React.RefObject<HTMLInputElement>
     constructor(props: QuizProps){
         super(props)
         this.updateSaveDataAtIndex.bind(this)
         this.updateAnswerPoints.bind(this)
+        this.questionRefs = []
+        for (let i = 0; i < this.props.questions.length; i++){
+            this.questionRefs.push(createRef())
+        }
+        this.startRef = createRef()
+        this.endRef = createRef()
         // this.calculateTotalPoints.bind(this)
     }
 
@@ -38,9 +47,28 @@ export class Quiz extends React.Component<QuizProps, QuizState> {
                         index={index} 
                         sharedSavedCanvasData={this.state.imageData} 
                         updateDataFunction={this.updateSaveDataAtIndex} 
-                        updateAnswer={this.updateAnswerPoints}></SlumQuestion>)}
+                        updateAnswer={this.updateAnswerPoints}
+                        prevRef={index != 0 ? this.questionRefs[index-1] : this.questionRefs[0]}
+                        ref={this.questionRefs[index]}
+                        nextRef={index != this.questionRefs.length - 1 ? this.questionRefs[index+1] : this.questionRefs[this.questionRefs.length - 1]}>
+
+                        </SlumQuestion>)}
+                {this.finalScore()}
             </div>
         )
+    }
+
+    finalScore = () => {
+        return  (
+            <div className='slumQDiv' ref={this.endRef}> 
+                <h1 className='scoreText'> {this.state.totalPoints} / 30</h1>
+
+            </div>
+        )
+    }
+
+    getRef(qIndex: number){
+        return this.questionRefs
     }
 
     // updateSaveDataAtIndex(saveData: string, index: number){
@@ -56,24 +84,45 @@ export class Quiz extends React.Component<QuizProps, QuizState> {
         this.setState(() => ({
             imageData: temp
         }))
-        console.log(this.state.imageData)
     }
 
     updateAnswerPoints = (qIndex: number, aIndex: number, newPointsValue: number) => {
         console.log('Updating: Q' + qIndex + this.state.questionList[qIndex].prompt + 'with Aindex of ' + aIndex + ' with point value of ' + newPointsValue)
+        this.activateOneAnswerDeactivateRest(qIndex, aIndex)
+    }
+
+    activateOneAnswerDeactivateRest = (qIndex: number, aIndex: number) => {
+        console.log("activating qindex: " + qIndex)
         let temp = this.state.questionList
         let tempQ = temp[qIndex] // make copy of Question
-        let tempA = tempQ.answerChoices![aIndex] // make copy of new anwer
-        tempA.pointsEarned = newPointsValue // asign new value to answer
-        let oldActiveStatus = tempA.active ? true : false // set it to active or not based on if it has earned points or not
-        tempA.active = !oldActiveStatus
-        tempQ.answerChoices![aIndex] = tempA // Assign new answer to copy of question
-        temp[qIndex] = tempQ // Assign new question to question list
-        this.setState((prevState) => ({
+        tempQ.answerChoices.forEach((answer, index) => {
+            console.log("resetting qIndex " + index)
+            let tempA = answer
+            tempA.pointsEarned = 0
+            tempA.active = false
+            tempQ.answerChoices[index] = tempA
+        });
+        tempQ.answerChoices![aIndex].pointsEarned = tempQ.answerChoices![aIndex].pointWorth
+        tempQ.answerChoices![aIndex].active = true
+        temp[qIndex] = tempQ
+        this.setState((p) => ({
             questionList: temp
-        }))
-        this.calculateTotalPoints()
-        
+        }), this.calculateTotalPoints)
+    }
+    deactivateAllAnswers = (qIndex: number) => {
+        console.log("Deativating all on qIndex" + qIndex)
+        let temp = this.state.questionList
+        let tempQ = temp[qIndex] // make copy of Question
+        tempQ.answerChoices.forEach((answer, index) => {
+            let tempA = answer
+            tempA.pointsEarned = 0
+            tempQ.answerChoices[index] = tempA
+        });
+
+        temp[qIndex] = tempQ
+        this.setState((p) => ({
+            questionList: temp
+        }), this.calculateTotalPoints)
     }
 
     calculateTotalPoints() {
