@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/SLUMS/static/css/main.0a247f96.chunk.css",
+    "main.js": "/SLUMS/static/js/main.e94a4de3.chunk.js",
+    "main.js.map": "/SLUMS/static/js/main.e94a4de3.chunk.js.map",
+    "runtime-main.js": "/SLUMS/static/js/runtime-main.0bb719df.js",
+    "runtime-main.js.map": "/SLUMS/static/js/runtime-main.0bb719df.js.map",
+    "static/js/2.fe26e9e8.chunk.js": "/SLUMS/static/js/2.fe26e9e8.chunk.js",
+    "static/js/2.fe26e9e8.chunk.js.map": "/SLUMS/static/js/2.fe26e9e8.chunk.js.map",
+    "index.html": "/SLUMS/index.html",
+    "static/css/main.0a247f96.chunk.css.map": "/SLUMS/static/css/main.0a247f96.chunk.css.map",
+    "static/js/2.fe26e9e8.chunk.js.LICENSE.txt": "/SLUMS/static/js/2.fe26e9e8.chunk.js.LICENSE.txt",
+    "static/media/Checkmark.f9a7d557.svg": "/SLUMS/static/media/Checkmark.f9a7d557.svg",
+    "static/media/Circle.fb529184.png": "/SLUMS/static/media/Circle.fb529184.png",
+    "static/media/LeftArrow.21454078.svg": "/SLUMS/static/media/LeftArrow.21454078.svg",
+    "static/media/RightArrow.3aa561a9.svg": "/SLUMS/static/media/RightArrow.3aa561a9.svg",
+    "static/media/SquareTriangleRect.f7522e19.png": "/SLUMS/static/media/SquareTriangleRect.f7522e19.png",
+    "static/media/XMark.c0541bcb.svg": "/SLUMS/static/media/XMark.c0541bcb.svg",
+    "static/media/logo.a264c85b.png": "/SLUMS/static/media/logo.a264c85b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0bb719df.js",
+    "static/js/2.fe26e9e8.chunk.js",
+    "static/css/main.0a247f96.chunk.css",
+    "static/js/main.e94a4de3.chunk.js"
+  ]
+}
