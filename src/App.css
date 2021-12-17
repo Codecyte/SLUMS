@@ -110,6 +110,7 @@ button:active {
   width: 100px;
   height: 50px;
   border: 2px solid black;
+  border-radius: 1em;
 
   /* vertical-align: text-top; */
   /* text-align: center; */
@@ -155,6 +156,7 @@ button:active {
   display: inline-block;
   padding: 5px;
   margin: 20px;
+  border-radius: 1em;
 }
 
 .slumCorrectBtn svg {
@@ -172,6 +174,7 @@ button:active {
   border: 2px solid black;
   margin: 20px;
   padding: 5px;
+  border-radius: 1em;
 }
 .slumIncorrectBtn svg {
   width: 40px;
